@@ -1,43 +1,6 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Resource
-{
-    string name;
-    int amount;
-
-    public Resource(string name, int amount)
-    {
-        Name = name;
-        Amount = amount;
-    }
-
-    public string Name { get => name; private set => name = value; }
-    public int Amount { get => amount; private set => amount = value; }
-
-    public void ModifyAmount(int mod)
-    {
-        amount += mod;
-    }
-
-    public Resource Copy()
-    {
-        return new Resource(name, amount);
-    }
-
-    public bool Equals(Resource other)
-    {
-        if (other == null) return false;
-
-        //Do they share a name? Amount isn't relevant for equality.
-        return other.name == name;
-    }
-
-    public override bool Equals(object obj)
-    {
-        return Equals(obj as Resource);
-    }
-}
 
 public class ResourceManager : MonoBehaviour
 {

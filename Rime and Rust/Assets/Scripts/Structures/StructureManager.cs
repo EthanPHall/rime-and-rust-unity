@@ -35,21 +35,21 @@ public class StructureManager : MonoBehaviour
 
     public void DEBUG_TriggerResourceGainEvent()
     {
-        Debug.Log("Resource Gain Event Triggered");
-        foreach(Structure structure in structures)
-        {
-            foreach(ResourceData resourceData in structure.produces)
-            {
-                ResourceData adjustedResource = 
-                    new ResourceData
-                    (
-                        resourceData.resourceName,
-                        resourceData.amount * structure.workers
-                    );
+        //Debug.Log("Resource Gain Event Triggered");
+        //foreach(Structure structure in structures)
+        //{
+        //    foreach(ResourceData resourceData in structure.produces)
+        //    {
+        //        ResourceData adjustedResource = 
+        //            new ResourceData
+        //            (
+        //                resourceData.Name,
+        //                resourceData.amount * structure.workers
+        //            );
 
-                resourceManager.AddResource(new Resource(adjustedResource));
-            }
-        }
+        //        resourceManager.AddResource(new Resource(adjustedResource));
+        //    }
+        //}
     }
 
     /// <summary>
@@ -61,35 +61,35 @@ public class StructureManager : MonoBehaviour
     /// <returns>Whether or not the structure was built.</returns>
     public bool BuildStructure(Structure toBuild, List<Resource> materials)
     {
-        List<(int, int)> indicesAndCosts = new List<(int, int)>();
+        //List<(int, int)> indicesAndCosts = new List<(int, int)>();
 
-        foreach(ResourceData recipeRequirement in toBuild.buildRecipe)
-        {
-            int buildingBlockIndex = materials.IndexOf(new Resource(recipeRequirement));
-            if (buildingBlockIndex != -1 && materials[buildingBlockIndex].Amount >= recipeRequirement.amount)
-            {
-                indicesAndCosts.Add((buildingBlockIndex, recipeRequirement.amount));
-            }
-            else
-            {
-                Debug.Log("Structure failed to build, not enough resources");
+        //foreach(ResourceData recipeRequirement in toBuild.buildRecipe)
+        //{
+        //    int buildingBlockIndex = materials.IndexOf(new Resource(recipeRequirement));
+        //    if (buildingBlockIndex != -1 && materials[buildingBlockIndex].Amount >= recipeRequirement.amount)
+        //    {
+        //        indicesAndCosts.Add((buildingBlockIndex, recipeRequirement.amount));
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Structure failed to build, not enough resources");
 
-                //Couldn't build the structure, the recipe was unfulfilled.
-                return false;
-            }
-        }
+        //        //Couldn't build the structure, the recipe was unfulfilled.
+        //        return false;
+        //    }
+        //}
 
-        //The recipe should be fulfilled so make the structure and remove resources.
-        Structure newStructure = Instantiate(toBuild);
-        structures.Add(newStructure);
+        ////The recipe should be fulfilled so make the structure and remove resources.
+        //Structure newStructure = Instantiate(toBuild);
+        //structures.Add(newStructure);
 
-        foreach((int,int) indexAndCost in indicesAndCosts)
-        {
-            materials[indexAndCost.Item1].ModifyAmount(-indexAndCost.Item2);
-        }
+        //foreach((int,int) indexAndCost in indicesAndCosts)
+        //{
+        //    materials[indexAndCost.Item1].ModifyAmount(-indexAndCost.Item2);
+        //}
 
-        Debug.Log("Structure built successfully");
-        survivorManager.AddNewWorkers(1);
+        //Debug.Log("Structure built successfully");
+        //survivorManager.AddNewWorkers(1);
         return true;
     }
 

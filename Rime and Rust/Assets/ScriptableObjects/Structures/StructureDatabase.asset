@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d749843c4e5a6f44c84683f0f8f0460b, type: 3}
+  m_Name: StructureDatabase
+  m_EditorClassIdentifier: 
+  foldoutImportGUI: 1
+  documentId: 1-UibEFcWutHsSf08NU2bivvzHFgP25byrcRnUBv-_co
+  selectedTogglesIds:
+  - Structures
+  - CraftableItems
+  - PassiveProduction
+  foldoutSerializationGUI: 0
+  serializationOutputPath: ../../Configs
+  serializationFileName: Configs.v0.1
+  serializationFormat: 0
+  content:
+    Structures:
+    - ID: st_metal_crafting
+      Name: Forge Sled
+      structureName: 
+      buildRecipe: []
+      produces: []
+      workers: 0
+    - ID: st_large_capacity_increaser
+      Name: House Sled
+      structureName: 
+      buildRecipe: []
+      produces: []
+      workers: 0
+    - ID: st_primary_resource_gathering
+      Name: Scavenger Sled
+      structureName: 
+      buildRecipe: []
+      produces: []
+      workers: 0
+    - ID: st_primary_crafting
+      Name: Workshop Sled
+      structureName: 
+      buildRecipe: []
+      produces: []
+      workers: 0
+    - ID: st_science_crafting
+      Name: Lab Sled
+      structureName: 
+      buildRecipe: []
+      produces: []
+      workers: 0
+    PassiveProduction:
+    - StructureID: st_primary_resource_gathering
+      ItemID: item_low_quality_metal
+      Amount: 1
+    - StructureID: st_primary_resource_gathering
+      ItemID: item_general_precursor
+      Amount: 2
+    - StructureID: st_primary_resource_gathering
+      ItemID: item_construction_1
+      Amount: 1
+    CraftableItems:
+    - StructureID: st_primary_crafting
+      ItemID: item_construction_2
+      Amount: 1
+    - StructureID: st_primary_crafting
+      ItemID: item_low_quality_metal
+      Amount: 1

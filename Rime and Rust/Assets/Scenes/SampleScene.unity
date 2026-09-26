@@ -1450,6 +1450,7 @@ MonoBehaviour:
   workersMax: 50
   freeWorkers: 0
   occupiedWorkers: 0
+  totalWorkers: 0
 --- !u!4 &616830127
 Transform:
   m_ObjectHideFlags: 0
@@ -3069,7 +3070,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   structures: []
-  debugStructure: {fileID: 11400000, guid: 115ff45101101584c91c43247fdd74f8, type: 2}
+  debugStructure:
+    ID: 
+    Name: 
+    structureName: 
+    buildRecipe: []
+    produces: []
+    workers: 0
   resourceManager: {fileID: 150350468}
   survivorManager: {fileID: 616830126}
 --- !u!1 &2114561484
@@ -3282,7 +3289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3574793339541741626, guid: d96464d43dee8804caa5e2fcef989467, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.35
       objectReference: {fileID: 0}
     - target: {fileID: 3574793339541741626, guid: d96464d43dee8804caa5e2fcef989467, type: 3}
       propertyPath: m_SizeDelta.y

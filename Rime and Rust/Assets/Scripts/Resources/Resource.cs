@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 [Serializable]
-//[CreateAssetMenu(fileName = "Resource", menuName = "Scriptable Objects/Resource")]
 public class Resource
 {
     [SerializeField] ResourceData _data;
@@ -19,11 +18,11 @@ public class Resource
     {
         _data = new ResourceData();
 
-        Name = data.resourceName;
+        Name = data.Name;
         Amount = data.amount;
     }
 
-    public string Name { get => _data.resourceName; private set => _data.resourceName = value; }
+    public string Name { get => _data.Name; private set => _data.Name = value; }
     public int Amount { get => _data.amount; private set => _data.amount = value; }
 
     public void ModifyAmount(int mod)
@@ -33,7 +32,7 @@ public class Resource
 
     public Resource Copy()
     {
-        return new Resource(_data.resourceName, _data.amount);
+        return new Resource(_data.Name, _data.amount);
     }
 
     public bool Equals(Resource other)
@@ -41,7 +40,7 @@ public class Resource
         if (other == null) return false;
 
         //Do they share a name? Amount isn't relevant for equality.
-        return other._data.resourceName == _data.resourceName;
+        return other._data.Name == _data.Name;
     }
 
     public override bool Equals(object obj)

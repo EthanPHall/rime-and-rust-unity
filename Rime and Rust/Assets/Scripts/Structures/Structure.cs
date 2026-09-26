@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Structure", menuName = "Scriptable Objects/Structure")]
-public class Structure : ScriptableObject, SurvivorSink
+[Serializable]
+public class Structure : SurvivorSink
 {
+    public string ID;
+    public string Name;
+
     public string structureName;
     public ResourceData[] buildRecipe;
     public ResourceData[] produces;
